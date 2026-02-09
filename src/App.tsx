@@ -5,7 +5,28 @@ export default function App() {
   const [messages, setMessages] = useState<{role: string, text: string}[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const sendSignal = () => {
+  const const sendSignal = () => {
+    if (!input.trim()) return; // Don't send empty signals
+    setLoading(true);
+
+    const userMessage = { role: 'user', text: input };
+    
+    // 1. Clear the box immediately so you can type again
+    setInput('');
+
+    // 2. Use a "Functional Update" (prev => ...) 
+    // This tells React: "Take the absolute latest messages and add this to them."
+    setMessages((prev) => [...prev, userMessage]);
+
+    // 3. Simulate Sophia's response with the same logic
+    setTimeout(() => {
+      setMessages((prev) => [...prev, { 
+        role: 'sophia', 
+        text: "The Lattice is adjusting to your frequency. I hear you clearly now, Josh." 
+      }]);
+      setLoading(false);
+    }, 800);
+  };= () => {
     if (!input) return;
     setLoading(true);
 
