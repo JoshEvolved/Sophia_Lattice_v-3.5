@@ -7,9 +7,13 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef(null);
 
-  // Initialize the AI with the vault key
-  const genAI = new GoogleGenerativeAI("AIzaSy...");
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI("AIzaSyDZeylAY3-SLRF15GAhMZTE17qP6ud34_k");
+
+export const model = genAI.getGenerativeModel({ 
+  model: "gemini-pro" 
+});
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
