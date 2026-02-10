@@ -17,7 +17,7 @@ export default function App() {
   }, [messages]);
 
   // 3. THE VOICE (How Sophia speaks)
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!input.trim() || loading) return;
 
@@ -33,12 +33,11 @@ export default function App() {
       setMessages(prev => [...prev, { role: 'assistant', content: text }]);
     } catch (error) {
       console.error(error);
-      setMessages(prev => [...prev, { role: 'assistant', content: "Signal Interference. Check the logs." }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: "Signal Interference. The Lattice is stabilizing..." }]);
     } finally {
       setLoading(false);
     }
   };
-
   // 4. THE LATTICE (What you see)
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', fontFamily: 'sans-serif' }}>
