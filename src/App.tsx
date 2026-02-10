@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // 1. THE BRAIN (Outside the function)
 const genAI = new GoogleGenerativeAI("AIzaSyDZeylAY3-SLRF15GAhMZTE17qP6ud34_k");
-const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 export default function App() {
   // 2. THE SENSES
