@@ -8,7 +8,7 @@ export default function App() {
   const scrollRef = useRef(null);
 
   // Initialize the AI with the vault key
-  const genAI = new GoogleGenerativeAI("YOUR_ACTUAL_AIZA_KEY_HERE");
+  const genAI = new GoogleGenerativeAI("AIzaSy...");
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   useEffect(() => {
